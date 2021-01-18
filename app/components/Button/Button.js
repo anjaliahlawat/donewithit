@@ -1,13 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 
-function Button({children}) {
+function AppButton({title, onPress}) {
   return (
-   <View style={styles.button}>
-       {children.text}
-   </View>
+    <TouchableOpacity style={styles.button} onPress={onPress}>
+          <Text style={styles.text}>{title} </Text>
+    </TouchableOpacity>
   );
 }
 
-export default Button;
+export default AppButton;
