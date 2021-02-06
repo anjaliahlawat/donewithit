@@ -14,7 +14,7 @@ function ImageInput({imageUri, onChangeImage}) {
 
   const requestPermission = async () => {
     const {granted} = await ImagePicker.requestCameraPermissionsAsync()
-    if(granted)
+    if(!granted)
       alert('You need to enable permission to access the lib')
   }
 
