@@ -1,12 +1,27 @@
-import React from 'react';
-import { Text } from 'react-native';
-import ListingEditScreen from './app/screens/ListingEditScreen';
-import LoginScreen from './app/screens/LoginScreen';
-import MessageScreen from './app/screens/MessageScreen';
+import React, { useState} from 'react';
+import {View } from 'react-native';
+
+import Screen from './app/components/Screen';
+import ImageInputList from './app/components/ImageInputList';
 
 export default function App() {
+  const [imageUris, setImageUris] = useState([])
+
+  const handleAdd = uri => {
+    setImageUris([...imageUris, uri])
+  }
+
+  const handleRemove = uri => {
+    setImageUris(imageUris.filter(imageUri => imageUri !== uri))
+  }
 
   return (
-    <ListingEditScreen />
+    <Screen>
+      <ImageInputList 
+        imageUri={image} 
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
+      />
+    </Screen>
   );
 }
