@@ -6,6 +6,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {NavigationContainer, useNavigation} from '@react-navigation/native'
 
 import Screen from './app/components/Screen'
+import AuthNavigator from './app/navigation/AuthNavigator'
+import navigationTheme from './app/navigation/navigationTheme'
+import AppNavigator from './app/navigation/AppNavigator'
 
 enableScreens()
 
@@ -75,16 +78,16 @@ const TabNavigator = () => (
       inactiveTintColor:'black'
     }}
   >
-    <Tab.Screen name="Feed" component={Tweets} />
+    <Tab.Screen name="Feed" component={StackNavigator} />
     <Tab.Screen name="Account" component={Tweets} />
   </Tab.Navigator>
 )
 
 export default function App() {
   return (
-    <NavigationContainer>
-      {/* <StackNavigator/> */}
-      <TabNavigator />
+    <NavigationContainer theme={navigationTheme}>
+     {/* <AuthNavigator /> */}
+     <AppNavigator />
     </NavigationContainer>
   );
 }
