@@ -8,26 +8,14 @@ import Screen from '../components/Screen';
 import AppText from '../components/AppText/AppText';
 import AppButton from '../components/Button/Button';
 import ActivityIndicator from '../components/ActivityIndicator';
+import useApi from '../hooks/useApi';
 
 function ListingsScreen({navigation}) {
-  const [listings, setListings]=useState([])
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const {data: listings, error, loading, request: loadListings} = useApi(listingApi.getListings)
 
   useEffect(()=>{
     loadListings()
   },[])
-
-  const loadListings = async ()=>{
-    setLoading(true)
-    const response = await listingApi.getListings()
-    setLoading(false)
-
-    if(!response.ok) return setError(true)
-
-    setError(false)
-    setListings(response.data)
-  }
 
   return (
     <Screen style={styles.screen}>
@@ -35,8 +23,8 @@ function ListingsScreen({navigation}) {
           <AppText>Couldn't retrieve the listings</AppText>
           <AppButton title="Retry" onPress={loadListings}/>
         </>}
-        <ActivityIndicator visible={true} />
-        {/* <FlatList 
+        <ActivityIndicator visible={loading} />
+        <FlatList 
             data={listings}
             keyExtractor={listing => listing.id.toString()}
             renderItem={({item})=>
@@ -47,7 +35,7 @@ function ListingsScreen({navigation}) {
               onPress={()=> navigation.navigate(routes.LISTING_DETAILS, item)}
             />
           }
-        /> */}
+        />
     </Screen>
   );
 }
