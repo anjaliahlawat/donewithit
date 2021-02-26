@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-screens@~2.15.0
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add expo-app-loading
 
 PATH: 
   C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\PuTTY\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\nodejs\;C:\Users\Anjali\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\Anjali\AppData\Local\Programs\Python\Python37-32\;C:\Users\Anjali\AppData\Local\Microsoft\WindowsApps;;C:\Users\Anjali\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Anjali\AppData\Roaming\Composer\vendor\bin;C:\Users\Anjali\AppData\Local\Yarn\bin;C:\Program Files\heroku\bin;C:\Users\Anjali\AppData\Roaming\npm
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\Anjali\Documents\Practice-projects\React-Native\DoneWithIt\node_modules\@babel\plugin-external-helpers\lib'
+  Error: EPERM: operation not permitted, unlink 'C:\Users\Anjali\Documents\Practice-projects\React-Native\DoneWithIt\node_modules\@babel\helper-compilation-targets\node_modules\.bin'
 
 npm manifest: 
   {
@@ -40,6 +40,7 @@ npm manifest:
       "expo-image-picker": "~9.2.0",
       "expo-location": "~10.0.0",
       "expo-permissions": "~10.0.0",
+      "expo-secure-store": "~9.3.0",
       "expo-status-bar": "~1.0.3",
       "formik": "^2.2.6",
       "jwt-decode": "^3.1.2",
@@ -3610,6 +3611,11 @@ Lockfile:
     version "0.0.0"
     resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
     integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
+  
+  jwt-decode@^3.1.2:
+    version "3.1.2"
+    resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
+    integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
   
   kind-of@^1.1.0:
     version "1.1.0"

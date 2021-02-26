@@ -1,8 +1,7 @@
-import React, { useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {enableScreens} from 'react-native-screens'
 import {NavigationContainer, useNavigation} from '@react-navigation/native'
-import jwtDecode from 'jwt-decode';
-import {AppLoading} from 'expo'
+import AppLoading from 'expo-app-loading'
 
 import navigationTheme from './app/navigation/navigationTheme'
 import AppNavigator from './app/navigation/AppNavigator'
@@ -17,14 +16,13 @@ export default function App() {
   const [user, setUser] = useState()
   const [isReady, setIsReady] = useState(false)
 
-  const restoreToken = async ()=> {
-    const token = await authStorage.getToken()
-    if(!token) return 
-    setUser(jwtDecode(token))
+  const restoreUser = async ()=> {
+    const user = await authStorage.getUser()
+    if(user) setUser(user) 
   }
 
   if(!isReady)
-    return <AppLoading startAsync={restoreToken} onFinish={()=> setIsReady(true)}/>
+    return <AppLoading startAsync={restoreToken} onFinish={()=> setIsReady(true)} onError={console.warn}/>
 
   return (
     <AuthContext.Provider value={{user, setUser}}>
