@@ -6,7 +6,6 @@ import {AppForm, AppFormField, ErrorMessage, SubmitButton} from '../components/f
 import authApi from '../api/auth'
 import Screen from '../components/Screen';
 import useAuth from '../auth/useAuth';
-import ActivityIndicator from '../components/ActivityIndicator';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
@@ -27,7 +26,6 @@ function LoginScreen(props) {
 
   return (
     <Screen style={styles.container}>
-        <ActivityIndicator visible={registerApi.loading || loginApi.loading}/>
         <Image 
           style={styles.logo}
           source={require('../assets/logo-red.png')} />

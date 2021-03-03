@@ -18,12 +18,13 @@ function ListingsScreen({navigation}) {
   },[])
 
   return (
-    <Screen style={styles.screen}>
+    <>
+      <ActivityIndicator visible={loading} />
+      <Screen style={styles.screen}>
         {error && <>
           <AppText>Couldn't retrieve the listings</AppText>
           <AppButton title="Retry" onPress={loadListings}/>
         </>}
-        <ActivityIndicator visible={loading} />
         <FlatList 
             data={listings}
             keyExtractor={listing => listing.id.toString()}
@@ -38,6 +39,7 @@ function ListingsScreen({navigation}) {
           }
         />
     </Screen>
+    </>
   );
 }
 
