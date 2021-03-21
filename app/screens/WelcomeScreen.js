@@ -3,9 +3,6 @@ import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import AppButton from '../components/Button/Button';
 
 function WelcomeScreen({navigation}) {
-  const handleButton = ()=>{
-    console.log("tapped")
-  }
   return (
     <ImageBackground 
       blurRadius={2}
